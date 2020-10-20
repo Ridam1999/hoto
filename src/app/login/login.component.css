@@ -1,0 +1,12 @@
+.main-div mat-card{
+    padding: 0%;
+}
+.login-form{
+ 
+    padding: 10%;
+}
+.red-text {
+    
+    color: red !important;
+    text-align: center !important;
+  }

@@ -1,0 +1,61 @@
+<mat-card class="header"> HOTO Automation
+  <img mat-card-image src="../../assets/Logo-Orange.jpg" alt="OBS">
+
+</mat-card>
+
+
+
+
+<div class="list-container" id="leftbox">
+
+  <div class="column-container">
+    <div class="list" cdkDropList #appList="cdkDropList" [cdkDropListData]="applications"
+      [cdkDropListConnectedTo]="[selectList]" (cdkDropListDropped)="onDrop($event)">
+      <h2>Applications</h2>
+      <mat-card class="disable" *ngFor="let apps of applications" cdkDrag [cdkDragDisabled]="isDisable"> 
+        <mat-card-header>
+          <mat-card-title>{{apps.name}}</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="column-container">
+    <div class="list" cdkDropList #selectList="cdkDropList" [cdkDropListData]="selected"
+      [cdkDropListConnectedTo]="appList" (cdkDropListDropped)="onDrop($event)">
+      <h2>Selected</h2>
+      <mat-card class="disable" *ngFor="let select of selected" cdkDrag [cdkDragDisabled]="isDisable">
+        <mat-card-header>
+          <mat-card-title>{{select.name}}</mat-card-title>
+
+        </mat-card-header>
+      </mat-card>
+    </div>
+    <br>
+    <h4>Total Selected: {{selected.length}}</h4>
+    <button type="button" id="submit" class="btn btn-primary btn-lg" (click)="onSubmit()">Submit</button>
+    &nbsp;&nbsp;
+
+    <button type="button" class="btn btn-primary btn-lg" (click)="reset()">Reset</button>
+
+  </div>
+</div>
+
+<div id="rightbox">
+
+  <TABLE border="1" cellpadding="5" cellspacing="2">
+    <TR class="heading" id="one"> 
+      <TH  class="a">Hoto Managers</TH>
+    </TR >
+    <TR class="heading" id="two">
+      <TH  class="a">GATE 3</TH>
+    </TR>
+    <TR class="three" >
+      
+      
+    </TR>
+    
+
+  </TABLE>
+  
+</div>
